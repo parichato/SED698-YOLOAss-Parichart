@@ -3,7 +3,7 @@ import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 import numpy as np
-st.title("Fire image Detection App :)")
+st.title("🔥 Fire Detection App 🔥")
 
 # Load YOLO model
 # model = YOLO("runs/detect/train73/weights/best.pt")
@@ -35,5 +35,13 @@ if uploaded_image is not None:
   class_names = [model.names[i] for i in class_ids]
 
   # Count Fire
-  Fire_count = class_names.count("Fire")
-  st.write(f"Number of fire detected: **{Fire_count}**")
+  Fire_count = class_names.count("fire")
+  st.write(f"🔥 Number of fire detected: **{Fire_count}**")
+  st.write("Detected classes:", class_names)
+
+
+  # Alert if fire detected
+    if fire_count > 0:
+        st.error("🚨🔥 FIRE DETECTED! 🔥🚨")
+    else:
+        st.success("✅ No fire detected.")
