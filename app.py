@@ -37,6 +37,5 @@ if uploaded_image is not None:
   # Count Fire
   Fire_count = class_names.count("Fire-")
   st.write(f"🔥 Number of fire detected: **{Fire_count}**")
-  st.write("Detected classes:", class_names)
 
 
