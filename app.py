@@ -40,8 +40,3 @@ if uploaded_image is not None:
   st.write("Detected classes:", class_names)
 
 
-  # Alert if fire detected
-    if fire_count > 0:
-        st.error("🚨🔥 FIRE DETECTED! 🔥🚨")
-    else:
-        st.success("✅ No fire detected.")
