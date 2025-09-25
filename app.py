@@ -21,7 +21,7 @@ if uploaded_image is not None:
 
   # Run YOLO inference
   st.info("Running YOLO object detection...")
-  results = model.predict(image_np , conf=0.2)
+  results = model.predict(image_np , conf=0.4)
 
   # Draw results on image
   result_image = results[0].plot()
@@ -35,5 +35,5 @@ if uploaded_image is not None:
   class_names = [model.names[i] for i in class_ids]
 
   # Count Fire
-  fire_count = class_names.count("fire")
-  st.write(f"Number of fire detected: **{fire_count}**")
+  Fire_count = class_names.count("Fire")
+  st.write(f"Number of fire detected: **{Fire_count}**")
